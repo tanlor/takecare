@@ -6,6 +6,7 @@
   align-items: center;
   width: 100vw;
   height: 25vh;
+  max-width: 100%;
   background-color: rgb(53, 53, 53);
 }
 
