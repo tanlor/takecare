@@ -3,8 +3,8 @@
 /* =============== */
 
 .main-container {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +20,7 @@
 .main-container-title {
   text-transform: uppercase;
   text-shadow: 0px 3px 4px rgb(77, 76, 76);
-  font-size: 72px;
+  font-size: 8.2rem;
   font-weight: 500;
   color: #fff;
   z-index: 1;
@@ -28,8 +28,6 @@
 
 .main-container-desc {
   text-transform: uppercase;
-  position: relative;
-  bottom: 20px;
   width: 100%;
   color: #ffffff;
   font-size: 24px;
@@ -40,8 +38,7 @@
 
 .main-footer {
   z-index: 1;
-  display: flex;
-  width: 100%;
+  width: 100vw;
 }
 
 .main-footer > svg {
@@ -49,13 +46,13 @@
   right: 50%;
   bottom: 5%;
   color: rgb(138, 138, 138);
-  font-size: 32px;
+  font-size: 3.2rem;
   transform: scaleX(1.2);
 }
 
 #main-wrapper {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,8 +61,8 @@
 .bghover {
   z-index: 1;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: rgba(43, 43, 43, 0.85);
   background: -moz-linear-gradient(
     top,
@@ -115,8 +112,8 @@
 
 #bg-video {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   z-index: 0;
   -webkit-filter: blur(5px);
@@ -128,14 +125,14 @@
 
 #bg-video video {
   object-fit: cover;
-  height: 99.6%;
-  width: 100%;
+  height: 99.6vh;
+  width: 100vw;
   overflow: hidden;
 }
 
 #videobcg {
   color: black;
-  width: 100%;
+  width: 100vh;
   height: auto;
 }
 
@@ -180,5 +177,5 @@
 }
 
 #titleWordHTML {
-  color: rgb(122, 122, 122);
+  color: rgb(255, 219, 60);
 }

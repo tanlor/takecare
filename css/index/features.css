@@ -1,48 +1,56 @@
 /* First Feature */
 .main-feature {
-  width: 100%;
-  height: 60%;
+  width: 100vw;
+  height: 80vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   background: rgb(47, 47, 47);
-  -webkit-box-shadow: inset 13px 113px 22px -111px rgba(0, 0, 0, 0.76);
-  -moz-box-shadow: inset 13px 113px 22px -111px rgba(0, 0, 0, 0.76);
-  box-shadow: inset 13px 113px 22px -111px rgba(0, 0, 0, 0.76);
-}
-
-.feature-text {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 3%;
-  color: white;
-  border-left: 1px solid rgb(255, 255, 255);
-  padding: 15px;
-}
-
-.feature-text h1 {
-  text-transform: uppercase;
-  font-size: 4em;
-}
-
-.feature-image {
-  width: 70%;
-  height: 100%;
-  display: flex;
-  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(../../images/feature1.png);
-  /*border: 2px solid red;*/
+}
+
+.feature-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 100%;
+  background-color: rgb(47, 47, 47);
+  padding: 2%;
+}
+
+.feature-text {
+  border-left: 1px solid rgb(255, 255, 255);
+  padding: 10px;
+}
+
+.feature-text h1 {
+  color: white;
+  font-size: 4.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  position: relative;
+  left: 10px;
+}
+
+.feature-text p {
+  width: 90%;
+  font-size: 1.6rem;
+  color: white;
+  position: relative;
+  left: 10px;
+}
+
+.featureWord {
+  text-transform: uppercase;
+  color: rgb(255, 219, 60);
+  font-weight: 500;
+  font-size: 11rem;
 }
 
 .feature-image-hover {
-  z-index: 2;
-  position: relative;
-  right: 5px;
   height: 100%;
   width: 100%;
   background: rgba(47, 47, 47, 1);
@@ -84,31 +92,4 @@
     rgba(0, 0, 0, 0) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2f2f2f', endColorstr='#000000', GradientType=1 );
-}
-
-.featureWord {
-  color: rgb(255, 219, 60);
-  font-size: 1.7em;
-}
-
-.video-box-main {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.video-box-title {
-  justify-content: center;
-  padding: 15px;
-  margin-bottom: 30px;
-}
-
-.video-box-title h1 {
-  font-size: 4em;
-  text-transform: uppercase;
-  color: white;
-  text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.37);
 }

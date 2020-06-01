@@ -8,8 +8,8 @@
 
 .navbar {
   z-index: 4;
-  width: 70%;
-  height: 60px;
+  width: 70vw;
+  height: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,12 +18,12 @@
 }
 
 .navbar.stretch {
-  width: 100%;
+  width: 100vw;
   align-content: center;
   justify-content: center;
   position: fixed;
   background-color: rgba(255, 255, 255, 1);
-  transition: 0.2s;
+  transition: 0.1s;
   margin-top: 0px;
   -webkit-box-shadow: 0px 12px 17px -7px rgba(0, 0, 0, 0.76);
   -moz-box-shadow: 0px 12px 17px -7px rgba(0, 0, 0, 0.76);
@@ -53,16 +53,23 @@
 }
 
 .menu {
-  font-size: 18x;
   width: 70%;
 }
 
 .menu a {
+  font-size: 1.6rem;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 500;
   padding: 15px;
   color: #fff;
+}
+
+.menu a:hover {
+  text-decoration: none;
+  filter: invert(0%);
+  color: rgb(177, 177, 177);
+  transition: 0.2s;
 }
 
 .logo {
@@ -72,7 +79,7 @@
 }
 
 .logo img {
-  width: 90px;
-  height: 90px;
+  width: 9rem;
+  height: 9rem;
   filter: invert(100%);
 }

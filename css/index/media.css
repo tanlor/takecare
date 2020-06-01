@@ -13,4 +13,17 @@
   .stats-main {
     height: 100vh;
   }
+
+  .feature-text {
+  }
+
+  .main-feature {
+    text-align: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  .feature-image {
+    position: relative;
+  }
 }
