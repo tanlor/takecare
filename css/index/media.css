@@ -1,0 +1,16 @@
+@media (max-width: 1450px) {
+  .video-box-main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stat-box-main {
+    flex-direction: column;
+    padding: 40px;
+  }
+
+  .stats-main {
+    height: 100vh;
+  }
+}
