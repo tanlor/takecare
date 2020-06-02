@@ -9,7 +9,7 @@
 .navbar {
   z-index: 4;
   width: 70vw;
-  height: 10vh;
+  height: 8vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

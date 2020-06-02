@@ -52,14 +52,14 @@
 
 .footer-sitemap ul span {
   text-transform: uppercase;
-  font-size: 1.3em;
+  font-size: 1.3rem;
   font-weight: 200;
   color: rgb(93, 93, 93);
 }
 
 .footer-sitemap li {
   text-transform: uppercase;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
@@ -99,10 +99,9 @@
 }
 
 .footer-down {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100vh;
+  max-width: 100%;
+  text-align: center;
   background-color: rgb(93, 93, 93);
   font-size: 12px;
   height: 10%;
