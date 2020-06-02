@@ -44,16 +44,6 @@ fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://gameinfo
 	 changeWords();
 	 window.setInterval(changeWords, 4000);
 
-	 // When the user scrolls down 50px from the top of the document, resize the header's font size
-	 // =======================================
-	//  $(window).scroll(function () {
-	// 	 if ($(document).scrollTop() > 900) {
-	// 		 $('navbar').addClass('stretch');
-	// 	 } else {
-	// 		 $('navbar').removeClass('stretch');
-	// 	 }
-	//  });
-
 	 $(window).scroll( () =>
-			($(document).scrollTop() > 850) ? $('navbar').addClass('stretch') : $('navbar').removeClass('stretch')
+			($(document).scrollTop() > 850 ) ? $('navbar').addClass('stretch') : $('navbar').removeClass('stretch')
 	 );

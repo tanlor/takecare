@@ -1,4 +1,12 @@
-@media screen and (max-width: 1450px) {
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 45%;
+  }
+
+  .main-container {
+    height: 100vh;
+  }
+
   .main-container-title {
     text-align: center;
     font-size: 5.2rem;
@@ -72,5 +80,80 @@
   .footer-logo {
     position: relative;
     right: 20px;
+  }
+
+  .footer-description {
+    display: none;
+  }
+
+  /* Menu mobile */
+  .navbar,
+  .navbar.stretch,
+  #navbar {
+    display: none;
+  }
+
+  .navbar-mobile {
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    height: 10vh;
+    width: 100vw;
+    max-width: 100%;
+    background: #fff;
+  }
+
+  .navbar-mobile-menu-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 20%;
+    height: 100%;
+  }
+
+  .navbar-mobile svg {
+    font-size: 2.8rem;
+    color: rgb(0, 0, 0);
+  }
+
+  .navbar-mobile-textlogo {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .navbar-mobile-textlogo p {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    font-weight: 450;
+    position: relative;
+    top: 4px;
+    left: 10px;
+  }
+
+  .navbar-mobile-textlogo img {
+    height: 75%;
+    width: auto;
+  }
+
+  .navbar-mobile.on {
+    overflow: hidden;
+    height: 100vh;
+    width: 100vh;
+    max-width: 100%;
+    transition: 0.2s;
+  }
+
+  .video-box iframe {
+    width: 80vw !important;
+    height: 400px;
+  }
+
+  #stats-kill-fame {
+    font-size: 3.8rem;
   }
 }

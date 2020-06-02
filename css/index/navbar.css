@@ -83,3 +83,7 @@
   height: 9rem;
   filter: invert(100%);
 }
+
+.navbar-mobile {
+  display: none;
+}
