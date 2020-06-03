@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1100px) {
   html {
     font-size: 45%;
   }
@@ -55,6 +55,17 @@
     background-color: rgba(255, 255, 255, 0);
   }
 
+  .feature-text {
+    padding: 20px;
+    background-color: rgba(56, 56, 56, 0.9);
+    border: none;
+    border-radius: 20px;
+  }
+
+  .feature-text h1 {
+    left: 0px;
+  }
+
   .feature-image-hover {
     display: none;
   }
@@ -87,67 +98,128 @@
   }
 
   /* Menu mobile */
-  .navbar,
-  .navbar.stretch,
-  #navbar {
-    display: none;
+  /* =========================== */
+
+  .navbar {
+    position: fixed;
+    padding: 0px;
+
+    height: 10vh;
+    background-color: #fff;
+    margin: 0px;
+
+    transition: 0.2s;
   }
 
   .navbar-mobile {
-    z-index: 3;
+    width: 70%;
+    height: 100%;
+
     display: flex;
-    flex-direction: row;
-    position: fixed;
-    height: 10vh;
-    width: 100vw;
-    max-width: 100%;
-    background: #fff;
+    align-items: center;
   }
 
   .navbar-mobile-menu-icon {
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    width: 20%;
     height: 100%;
   }
 
-  .navbar-mobile svg {
-    font-size: 2.8rem;
-    color: rgb(0, 0, 0);
+  .navbar-mobile-menu-icon svg {
+    font-size: 3.6rem;
   }
 
-  .navbar-mobile-textlogo {
-    height: 100%;
-    width: 80%;
+  .navbar .menu {
+    display: none;
+  }
+
+  .navbar .main-socialbar {
+    display: none;
+  }
+
+  .navbar .logo {
+    filter: invert();
+  }
+
+  .navbar .logo img {
+    height: 80%;
+  }
+
+  /* Toggled mobile navbar */
+  /* ===================== */
+
+  .navbar.on {
+    height: 100vh;
+    flex-direction: row;
+    align-items: flex-start;
+    overflow: hidden;
+    padding-bottom: 0px;
+  }
+
+  .navbar.on .navbar-mobile {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    height: 8vh;
   }
 
-  .navbar-mobile-textlogo p {
-    text-transform: uppercase;
-    font-size: 2.4rem;
-    font-weight: 450;
-    position: relative;
-    top: 4px;
-    left: 10px;
+  .navbar.on .navbar-mobile-menu-icon {
+    display: flex;
+    height: 8vh;
   }
 
-  .navbar-mobile-textlogo img {
-    height: 75%;
-    width: auto;
+  .navbar.on .menu {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    filter: invert();
+    width: 100%;
+    height: auto;
   }
 
-  .navbar-mobile.on {
-    overflow: hidden;
-    height: 100vh;
-    width: 100vh;
+  .navbar.on .menu li {
+    display: block;
+    padding: 8% 0px;
+    width: 100vw;
     max-width: 100%;
+  }
+
+  .navbar.on .menu li:active {
+    background-color: rgb(65, 65, 65);
     transition: 0.2s;
   }
 
+  .navbar.on .menu li a {
+    font-size: 2.4rem;
+  }
+
+  .navbar.on .main-socialbar {
+    width: 100vw;
+    max-width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    filter: invert();
+  }
+
+  .navbar.on .main-socialbar a {
+    font-size: 4.8rem;
+  }
+
+  .navbar.on .main-socialbar a:hover {
+    filter: invert();
+  }
+
+  /* Hide navbar strech effect */
+  /* ========================= */
+
+  navbar.stretch {
+    display: none;
+  }
+
+  /* Other changes */
+  /* =========================== */
   .video-box iframe {
     width: 80vw !important;
     height: 400px;

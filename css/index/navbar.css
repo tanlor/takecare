@@ -8,17 +8,30 @@
 
 .navbar {
   z-index: 4;
-  width: 70vw;
+
+  width: 100vw;
+  max-width: 100%;
   height: 8vh;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
   margin-top: 20px;
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.navbar li {
+  display: inline;
 }
 
 .navbar.stretch {
   width: 100vw;
+  max-width: 100%;
   align-content: center;
   justify-content: center;
   position: fixed;

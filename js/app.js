@@ -1,5 +1,6 @@
 import { CountUp } from './CountUp.min.js';
 
+// Fetch and apply guild stats
 // =======================================
 
 fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://gameinfo.albiononline.com/api/gameinfo/guilds/x8pr49RnSimilkapwLA3SQ/data')}`)
@@ -44,6 +45,21 @@ fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://gameinfo
 	 changeWords();
 	 window.setInterval(changeWords, 4000);
 
+// Navbar change
+// =======================================
+
 	 $(window).scroll( () =>
 			($(document).scrollTop() > 850 ) ? $('navbar').addClass('stretch') : $('navbar').removeClass('stretch')
 	 );
+
+	 
+// Mobile Navbar
+// =======================================
+	let show = true;
+	const menuSection = document.querySelector('.navbar');
+	const menuButton = document.querySelector('.navbar-mobile-menu-icon');
+
+	menuButton.addEventListener("click", () => {
+		menuSection.classList.toggle("on", show);
+		show = !show;
+	});

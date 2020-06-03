@@ -40,6 +40,7 @@
 .main-footer {
   z-index: 1;
   width: 100vw;
+  max-width: 100%;
 }
 
 .main-footer > svg {
@@ -131,6 +132,7 @@
   object-fit: cover;
   height: 99.6vh;
   width: 100vw;
+  max-width: 100%;
   overflow: hidden;
 }
 
@@ -142,7 +144,7 @@
 }
 
 .main-socialbar {
-  width: 15%;
+  width: 10%;
   display: flex;
   flex-direction: row;
   align-items: center;
