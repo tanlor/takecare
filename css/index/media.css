@@ -20,6 +20,10 @@
     flex-direction: column;
   }
 
+  .bg-video video {
+    width: 98vw;
+  }
+
   .stats-main {
     height: auto;
   }
@@ -56,7 +60,7 @@
   }
 
   .feature-text {
-    padding: 20px;
+    padding: 10px;
     background-color: rgba(56, 56, 56, 0.9);
     border: none;
     border-radius: 20px;

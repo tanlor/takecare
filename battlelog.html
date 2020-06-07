@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Take Care</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+</head>
+
+<body>
+
+  <navbar id='navbar' class="navbar">
+    <div class="navbar-mobile">
+      <div class="navbar-mobile-menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <div class="logo">
+      <img src="svg/logo.svg" alt="">
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href='#'> Guides </a></li>
+        <li><a href='#'> Battleboard </a></li>
+        <li><a href='#'> Recruitment </a></li>
+      </ul>
+    </div>
+    <div class="main-socialbar">
+      <a href="#" class="yt"> <i class="fab fa-youtube"></i></a>
+      <a href="#" class="dc"> <i class="fab fa-discord"></i></a>
+    </div>
+  </navbar>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- Body page, needs to be reworked. -->
+  <table id="winners" class="display">
+    <thead>
+      <tr>
+        <th>Alliance</th>
+        <th>Guild</th>
+        <th>Kills</th>
+        <th>Deaths</th>
+        <th>Killfame</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id='battles'>
+      <!-- Here comes the data -->
+    </tbody>
+  </table>
+
+  <table id="losers" class="display">
+    <thead>
+      <tr>
+        <th>Alliance</th>
+        <th>Guild</th>
+        <th>Kills</th>
+        <th>Deaths</th>
+        <th>Killfame</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id='battles'>
+      <!-- Here comes the data -->
+    </tbody>
+  </table>
+
+  <div class="footer-main top-shadow">
+    <div class="footer-up">
+      <div class="footer-logo">
+        <img src="svg/logo.svg" alt="">
+      </div>
+      <div class="footer-description">
+        <h1>about take care</h1>
+        <p>Take Care is an Albion Online Guild active since the start of 2019. Now it'll come with a breve history
+          about
+          the guild that I don't know 100% yet, but i'll ask for someone who does.</p>
+        <p>
+          For beauty, that text will be split in two parts. That's the second part.
+        </p>
+      </div>
+      <div class="footer-sitemap">
+        <ul class="list-group list-group-flush"> <span>Menu -</span>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Guides</a></li>
+          <li><a href="#">Battleboard</a></li>
+          <li><a href="#">Recruitment</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-down">
+    This is a Albion Online Guild website, made by a member of the community. | All Albion Online related materials
+    are property of Sandbox Interactive GmbH.
+  </div>
+
+  <script src="plugins/jquery.js"></script>
+  <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src='plugins/fontawesome/js/all.min.js'></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="./js/countUp.min.js" type="module"></script>
+  <script src="./js/nav.js" type="module"></script>
+  <script src="./js/battlelog.js" type='module'></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"
+    integrity="sha256-4HOrwHz9ACPZBxAav7mYYlbeMiAL0h6+lZ36cLNpR+E=" crossorigin="anonymous"></script>
+  <script src="node_modules/timeago.js/dist/timeago.min.js"></script>
+
+</body>
+
+</html>
