@@ -1,10 +1,10 @@
 // Fetch para a tabela de alianças e players
 
 fetch(
-  `https://api.allorigins.win/get?url=${encodeURIComponent(
+    `https://api.allorigins.win/get?url=${encodeURIComponent(
     "https://gameinfo.albiononline.com/api/gameinfo/battles/90983308/"
   )}`
-)
+  )
   .then((response) => {
     if (response.ok) return response.json();
     throw new Error("Network response was not ok.");
@@ -50,22 +50,69 @@ fetch(
       (guild) => guild.allianceId === loserAllianceId
     );
 
-    // Get the otherGuilds of the loser alliance
+    // Get the otherGuilds in a different variable
     let otherGuilds = Object.values(obj.guilds).filter(
       (guild) =>
-        guild.allianceId != loserAllianceId &&
-        guild.allianceId != winnerAllianceId
+      guild.allianceId != loserAllianceId &&
+      guild.allianceId != winnerAllianceId
     );
 
-      // Add guilds to the tables
-    $(document).ready(function () {
+    // Get players from Winner guild
+    let winnerPlayers = Object.values(obj.players)
+      .filter((player) => player.allianceId === winnerAllianceId)
+      .sort((a, b) => b.killFame - a.killFame);
+    // Get the players from Loser guild
+    let loserPlayers = Object.values(obj.players)
+      .filter((player) => player.allianceId === loserAllianceId)
+      .sort((a, b) => b.killFame - a.killFame);
+    // Get the players from other guilds
+    let otherPlayers = Object.values(obj.players)
+      .filter(
+        (player) =>
+        player.allianceId != loserAllianceId &&
+        player.allianceId != winnerAllianceId
+      )
+      .sort((a, b) => b.killFame - a.killFame);
 
+    console.log(winnerPlayers);
+    // console.log(winnerPlayers)
+    console.log(loserPlayers);
+    //console.log(obj.players)
+    console.log(otherPlayers);
+
+    // Add guilds to the tables
+    $(document).ready(function () {
       // Select tables
-      let winnerTable = $("#winnerTable").DataTable();
-      let loserTable = $("#loserTable").DataTable();
-      let otherTable = $("#otherTable").DataTable();
-      //const winnerPlayersTable = $("#winnerPlayers").DataTable();
-      //const loserPlayersTable = $("#losersPlayers").DataTable();
+      const winnerTable = $("#winnerTable").DataTable({
+        order: [
+          [4, "desc"]
+        ]
+      });
+      const loserTable = $("#loserTable").DataTable({
+        order: [
+          [4, "desc"]
+        ]
+      });
+      const otherTable = $("#otherTable").DataTable({
+        order: [
+          [4, "desc"]
+        ]
+      });
+      const winnerPlayersTable = $("#winnerPlayersTable").DataTable({
+        order: [
+          [4, "desc"]
+        ],
+      });
+      const loserPlayersTable = $("#loserPlayersTable").DataTable({
+        order: [
+          [4, "desc"]
+        ],
+      });
+      const otherPlayersTable = $("#otherPlayersTable").DataTable({
+        order: [
+          [4, "desc"]
+        ],
+      });
 
       // Add winners rows to the winner table
       for (var i in winnerGuilds) {
@@ -84,7 +131,7 @@ fetch(
             `${winnerGuilds[i].deaths}`,
 
             // Guild Killfame
-            `${winnerGuilds[i].killFame}`
+            `${winnerGuilds[i].killFame}`,
           ])
           .draw(false);
       }
@@ -106,7 +153,7 @@ fetch(
             `${loserGuilds[i].deaths}`,
 
             // Guild Killfame
-            `${loserGuilds[i].killFame}`
+            `${loserGuilds[i].killFame}`,
           ])
           .draw(false);
       }
@@ -128,7 +175,89 @@ fetch(
             `${otherGuilds[i].deaths}`,
 
             // Guild Killfame
-            `${otherGuilds[i].killFame}`
+            `${otherGuilds[i].killFame}`,
+          ])
+          .draw(false);
+      }
+
+      // Add other guilds rows to the other guilds table
+      for (var i in winnerPlayers) {
+        winnerPlayersTable.row
+          .add([
+            //Player Weapon Image
+            //`${winnerPlayers[i].mainWeapon}`,
+
+            // Guild name
+            `${winnerPlayers[i].guildName}`,
+
+            // Player Name
+            `${winnerPlayers[i].name}`,
+
+            // Player Kills
+            `${winnerPlayers[i].kills}`,
+
+            // Player Deaths
+            `${winnerPlayers[i].deaths}`,
+
+            // Player Assistances
+            //`${winnerPlayers[i].assistances}`,
+
+            // Guild Killfame
+            `${winnerPlayers[i].killFame}`,
+          ])
+          .draw(false);
+      }
+
+      for (var i in loserPlayers) {
+        loserPlayersTable.row
+          .add([
+            //Player Weapon Image
+            //`${winnerPlayers[i].mainWeapon}`,
+
+            // Guild name
+            `${loserPlayers[i].guildName}`,
+
+            // Player Name
+            `${loserPlayers[i].name}`,
+
+            // Player Kills
+            `${loserPlayers[i].kills}`,
+
+            // Player Deaths
+            `${loserPlayers[i].deaths}`,
+
+            // Player Assistances
+            //`${loserPlayers[i].assistances}`,
+
+            // Guild Killfame
+            `${loserPlayers[i].killFame}`,
+          ])
+          .draw(false);
+      }
+
+      for (var i in otherPlayers) {
+        otherPlayersTable.row
+          .add([
+            //Player Weapon Image
+            //`${winnerPlayers[i].mainWeapon}`,
+
+            // Guild name
+            `${otherPlayers[i].guildName}`,
+
+            // Player Name
+            `${otherPlayers[i].name}`,
+
+            // Player Kills
+            `${otherPlayers[i].kills}`,
+
+            // Player Deaths
+            `${otherPlayers[i].deaths}`,
+
+            // Player Assistances
+            //`${otherPlayers[i].assistances}`,
+
+            // Guild Killfame
+            `${otherPlayers[i].killFame}`,
           ])
           .draw(false);
       }
