@@ -57,42 +57,78 @@ fetch(
         guild.allianceId != winnerAllianceId
     );
 
-    console.log(winnerGuilds);
-    console.log(loserGuilds);
-    console.log(otherGuilds);
-
+      // Add guilds to the tables
     $(document).ready(function () {
+
       // Select tables
-      const winnerTable = $("#winners").DataTable();
-      const loserTable = $("#losers").DataTable();
+      let winnerTable = $("#winnerTable").DataTable();
+      let loserTable = $("#loserTable").DataTable();
+      let otherTable = $("#otherTable").DataTable();
       //const winnerPlayersTable = $("#winnerPlayers").DataTable();
       //const loserPlayersTable = $("#losersPlayers").DataTable();
 
-      // Add winners to left table
-      for (var i in obj) {
+      // Add winners rows to the winner table
+      for (var i in winnerGuilds) {
         winnerTable.row
           .add([
             // Alliance name
-            `${moment(obj.guilds[i].alliance).fromNow()}`,
+            `${winnerGuilds[i].alliance}`,
 
             // Guild name
-            `${moment(obj.guilds[i].name).fromNow()}`,
+            `${winnerGuilds[i].name}`,
 
             // Guild kills
-            `${moment(obj.guilds[i].kills).fromNow()}`,
+            `${winnerGuilds[i].kills}`,
 
             // Guild Deaths
-            `${moment(obj.guilds[i].deaths).fromNow()}`,
+            `${winnerGuilds[i].deaths}`,
+
+            // Guild Killfame
+            `${winnerGuilds[i].killFame}`
           ])
           .draw(false);
       }
 
-      // Add losers to right table
-      for (var i in obj) {
-        winnerTable.row
+      // Add losers rows to the losers table
+      for (var i in loserGuilds) {
+        loserTable.row
           .add([
             // Alliance name
-            //`${moment(obj[i].endTime).fromNow()}`,
+            `${loserGuilds[i].alliance}`,
+
+            // Guild name
+            `${loserGuilds[i].name}`,
+
+            // Guild kills
+            `${loserGuilds[i].kills}`,
+
+            // Guild Deaths
+            `${loserGuilds[i].deaths}`,
+
+            // Guild Killfame
+            `${loserGuilds[i].killFame}`
+          ])
+          .draw(false);
+      }
+
+      // Add other guilds rows to the other guilds table
+      for (var i in otherGuilds) {
+        otherTable.row
+          .add([
+            // Alliance name
+            `${otherGuilds[i].alliance}`,
+
+            // Guild name
+            `${otherGuilds[i].name}`,
+
+            // Guild kills
+            `${otherGuilds[i].kills}`,
+
+            // Guild Deaths
+            `${otherGuilds[i].deaths}`,
+
+            // Guild Killfame
+            `${otherGuilds[i].killFame}`
           ])
           .draw(false);
       }
