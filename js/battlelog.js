@@ -1,3 +1,25 @@
+//for (let i = 0; i > 0 ; null) {
+  
+  let offset = 0;
+  let eventArray = [];
+
+  fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://gameinfo.albiononline.com/api/gameinfo/events/battle/90983308?offset=${offset}&limit=51`)}`)
+		.then(response => {
+			if (response.ok) return response.json()
+			throw new Error('Network response was not ok.')
+		})
+		.then(data => {
+      let obj = JSON.parse(data.contents)
+      eventArray.push(obj)
+      console.log(eventArray)
+     // obj.length < 51 ? i++ : offset += 50
+		});
+
+//  }
+
+//console.log(eventArray)
+//console.log(offset)
+
 // Fetch para a tabela de alianças e players
 
 fetch(
@@ -60,11 +82,9 @@ fetch(
     // Get players from Winner guild
     let winnerPlayers = Object.values(obj.players)
       .filter((player) => player.allianceId === winnerAllianceId)
-      .sort((a, b) => b.killFame - a.killFame);
     // Get the players from Loser guild
     let loserPlayers = Object.values(obj.players)
       .filter((player) => player.allianceId === loserAllianceId)
-      .sort((a, b) => b.killFame - a.killFame);
     // Get the players from other guilds
     let otherPlayers = Object.values(obj.players)
       .filter(
@@ -72,7 +92,6 @@ fetch(
         player.allianceId != loserAllianceId &&
         player.allianceId != winnerAllianceId
       )
-      .sort((a, b) => b.killFame - a.killFame);
 
     console.log(winnerPlayers);
     // console.log(winnerPlayers)
