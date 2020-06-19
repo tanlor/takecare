@@ -1,38 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <title>Take Care</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/index.css" />
-  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-</head>
+<%- include('partials/header.ejs') %>
 
 <body>
-  <navbar id="navbar" class="navbar">
-    <div class="navbar-mobile">
-      <div class="navbar-mobile-menu-icon">
-        <i class="fas fa-bars"></i>
-      </div>
-    </div>
-    <div class="logo">
-      <img src="svg/logo.svg" alt="" />
-    </div>
-    <div class="menu">
-      <ul>
-        <li><a href="#"> Guides </a></li>
-        <li><a href="#"> Battleboard </a></li>
-        <li><a href="#"> Recruitment </a></li>
-      </ul>
-    </div>
-    <div class="main-socialbar">
-      <a href="#" class="yt"> <i class="fab fa-youtube"></i></a>
-      <a href="#" class="dc"> <i class="fab fa-discord"></i></a>
-    </div>
-  </navbar>
+  <%- include('partials/navbar.ejs') %>
 
   <div id="main-wrapper">
     <div class="bghover">
@@ -40,7 +9,14 @@
     </div>
 
     <div id="bg-video">
-      <video id="videobcg" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+      <video
+        id="videobcg"
+        preload="auto"
+        autoplay="true"
+        loop="loop"
+        muted="muted"
+        volume="0"
+      >
         <source src="video/takecarebg.mp4" type="video/mp4" />
         Sorry, your browser does not support HTML5 video.
       </video>
@@ -91,11 +67,10 @@
         <span class="featureWord">Enjoy</span><br />
         <h1>Friendly people</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Pellentesque varius lorem vitae mattis porta. Cras ultricies
-          interdum nunc, sed mollis lorem accumsan vitae. Cras vel neque quis
-          nisl tincidunt faucibus. Suspendisse at ultricies nunc, ut gravida
-          nisi.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          varius lorem vitae mattis porta. Cras ultricies interdum nunc, sed
+          mollis lorem accumsan vitae. Cras vel neque quis nisl tincidunt
+          faucibus. Suspendisse at ultricies nunc, ut gravida nisi.
         </p>
       </div>
     </div>
@@ -108,11 +83,10 @@
         <span class="featureWord">Enjoy</span><br />
         <h1>Friendly people</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Pellentesque varius lorem vitae mattis porta. Cras ultricies
-          interdum nunc, sed mollis lorem accumsan vitae. Cras vel neque quis
-          nisl tincidunt faucibus. Suspendisse at ultricies nunc, ut gravida
-          nisi.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          varius lorem vitae mattis porta. Cras ultricies interdum nunc, sed
+          mollis lorem accumsan vitae. Cras vel neque quis nisl tincidunt
+          faucibus. Suspendisse at ultricies nunc, ut gravida nisi.
         </p>
       </div>
     </div>
@@ -122,16 +96,28 @@
   <div class="video-main top-shadow">
     <div class="video-box-container">
       <div class="video-box">
-        <iframe src="https://www.youtube.com/embed/Oa7xlQLq-iQ" frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/Oa7xlQLq-iQ"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
       <div class="video-box">
-        <iframe src="https://www.youtube.com/embed/6cDzwVSBUxo" frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/6cDzwVSBUxo"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
       <div class="video-box">
-        <iframe src="https://www.youtube.com/embed/xD-c6W4RIxU" frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/xD-c6W4RIxU"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
     <div class="video-box-title">
@@ -139,51 +125,5 @@
     </div>
   </div>
 
-  <div class="footer-main top-shadow">
-    <div class="footer-up">
-      <div class="footer-logo">
-        <img src="svg/logo.svg" alt="" />
-      </div>
-      <div class="footer-description">
-        <h1>about take care</h1>
-        <p>
-          Take Care is an Albion Online Guild active since the start of 2019.
-          Now it'll come with a breve history about the guild that I don't
-          know 100% yet, but i'll ask for someone who does.
-        </p>
-        <p>
-          For beauty, that text will be split in two parts. That's the second
-          part.
-        </p>
-      </div>
-      <div class="footer-sitemap">
-        <ul class="list-group list-group-flush">
-          <span>Menu -</span>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Guides</a></li>
-          <li><a href="#">Battleboard</a></li>
-          <li><a href="#">Recruitment</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-down">
-    This is a Albion Online Guild website, made by a member of the community.
-    | All Albion Online related materials are property of Sandbox Interactive
-    GmbH.
-  </div>
-
-  <script src="plugins/jquery.js"></script>
-  <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-  <script src="plugins/fontawesome/js/all.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="./js/countUp.min.js" type="module"></script>
-  <script src="./js/app.js" type="module"></script>
-  <script src="./js/nav.js" type="module"></script>
+  <%- include('partials/footer.ejs') %>
 </body>
-
-</html>
