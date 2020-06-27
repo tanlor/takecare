@@ -1,6 +1,6 @@
 fetch(
     `https://api.allorigins.win/get?url=${encodeURIComponent(
-    "https://gameinfo.albiononline.com/api/gameinfo/battles/90983308/"
+    `https://gameinfo.albiononline.com/api/gameinfo/battles/${battleId}/`
   )}`
   )
   .then((response) => {
@@ -9,6 +9,69 @@ fetch(
   })
   .then((data) => {
     let obj = JSON.parse(data.contents);
+
+    console.log('Antes:' , obj)
+
+    /* Treat object before to fit in the DB
+     The plan is to not create new classes since we already receiving an object from a third party API.
+     We only need to treat our object the way we need before sending it to the database.
+    */
+
+    // Create a 'non-alliance-guild in obj'
+      obj.noAllianceGuilds = {};
+    
+      // Create a 'non-guild-player in obj'
+      obj.noGuildPlayers = {};
+    
+      // Create guilds array inside each alliance
+      Object.values(obj.alliances).forEach( (alliance) => {
+        alliance.guilds = {};
+      })
+
+    // Create players array inside each guild
+      Object.values(obj.guilds).forEach( (guild) => {
+        guild.players = {};
+      })
+
+    // Create equipment array inside each player
+      Object.values(obj.players).forEach( (player) => {
+        player.equipament = {};
+      })
+
+
+    // Push guilds inside respective alliances
+      Object.values(obj.guilds).forEach( (guild) => {
+
+        const guildAllianceId = guild.allianceId
+
+        if (guildAllianceId == '') {
+        // If guild don't have alliance
+          obj.noAllianceGuilds[guild.name] = guild;
+        } else {
+        // If guild have alliance, push the guild object inside respective alliance        
+          obj.alliances[guildAllianceId].guilds[guild.name] = guild;
+        }
+
+      })
+
+    // Push players inside respective guilds
+    Object.values(obj.players).forEach( ( player ) => {
+      const playerAllianceId = player.allianceId
+      const playerGuildName = player.guildName
+
+      if( playerGuildName == '') { // If the player don't have a guild
+        obj.noGuildPlayers[player.name] = player;
+      } else if (playerAllianceId == '') { // If the player don't have an alliance
+        obj.noAllianceGuilds[playerGuildName].players[player.name] = player;
+      } else { // If the player have a guild and alliance
+        obj.alliances[playerAllianceId].guilds[playerGuildName].players[player.name] = player; 
+      }
+    })
+
+    delete obj.guilds
+    delete obj.players
+    
+      console.log('Depois:' , obj)
 
     /* Get an array of guilds that got into battle
       [0] = Alliance ID and [1] = Alliance data in that battle
@@ -68,12 +131,6 @@ fetch(
         player.allianceId != loserAllianceId &&
         player.allianceId != winnerAllianceId
       )
-
-    console.log(winnerPlayers);
-    // console.log(winnerPlayers)
-    console.log(loserPlayers);
-    //console.log(obj.players)
-    console.log(otherPlayers);
 
     // Add guilds to the tables
     $(document).ready(function () {
